@@ -7,24 +7,116 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Title</h1>
-    <h2>subtitle</h2>
+    <h1>CSS Selector and Combinators Cheet Sheet</h1>
+    <h2>CSS Selectors</h2>
+    <p>CSS selectors are used to define a pattern of the elements that you want to select for applying a set of CSS rules on the selected elements. Combinators define the relationship between the selectors. Using various selectors and combinators, you can precisely select and style the desired elements based on their type, attributes, state, or relationship to other elements.</p>
+
+    <h3>Types of Selectors</h3>
+    <p>There are over 80 selectors and combinators. CSS selectors can be grouped into the following categories based on the type of elements they can select.</p>
+
     <table>
         <thead>
             <tr>
-                <th>label</th>
+                <th>Selector</th>
+                <th>Description</th>
+                <th>CSS Syntax</th>
+                <th>CSS Example</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>data</td>
+                <td>Universal</td>
+                <td>Selects all elements.</td>
+                <td><code>* { style properties }</code></td>
+                <td>* { box-sizing: boarder-box; }</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>Selects all elements that have the given node name.</td>
+                <td><code>element { style properties }</code></td>
+                <td>p { background-color: skyblue; }</td>
+            </tr>
+            <tr>
+                <td>Class</td>
+                <td>Selects all elements that have the given class attribute.</td>
+                <td><code>.class_name { style properties }</code></td>
+                <td>.header { color: black; }</td>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td>Selects an element based on the value of its id attribute.</td>
+                <td><code>#id_value { style properties }</code></td>
+                <td>#info { font-family: proxima nova, sans-serif; }</td>
+            </tr>
+            <tr>
+                <td>Compound</td>
+                <td>Combining a type or universal selector with a class or id selector.</td>
+                <td><code>element#id_value { style properties }</code></td>
+                <td>a.selected { }</td>
+            </tr>
+            <tr>
+                <td>Attribute Selector</td>
+                <td>Selects elements based on the element having a given attribute explicitly set.</td>
+                <td><code>[attr]{ style properties } <br>[attr=value]{ style properties }</code></td>
+                <td>a[href=“https://example.com”] { color: green; }</td>
+            </tr>
+            <tr>
+                <td>Pseudo-classes</td>
+                <td>Selects a special state of the selected element.</td>
+                <td><code>:disabled { style properties }</code></td>
+                <td>input[type="text"]:disabled { background: gray; }</td>
             </tr>
         </tbody>
     </table>
-    <h2>subtitle</h2>
+    <h2>CSS combinators</h2>
+    <p>A complex selector is a sequence of one or more simple and/or compound selectors that are separated by combinators, including the white space which is a descendant combinator.</p>
     <table>
-        <thead></thead>
-        <tbody></tbody>
+        <thead>
+            <tr>
+                <th>Combinators</th>
+                <th>Description</th>
+                <th>CSS Syntax</th>
+                <th>CSS example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Descendant Combinator</td>
+                <td>Selects nodes that are descendants of the first element. (denoted with one or more spaces)</td>
+                <td><code>selector1 selector2 { style properties }</code></td>
+                <td>li li { list-style-type: circle; }</td>
+            </tr>
+            <tr>
+                <td>Child Combinator</td>
+                <td>Selects nodes that are direct children of the first element. (Denoted with the greater than character (>)</td>
+                <td><code>selector1 > selector2 { style properties }</code></td>
+                <td>nav > button { background-color: black; }</td>
+            </tr>
+            <tr>
+                <td>Grandchild Combinator</td>
+                <td>Selects nodes that are direct grandchildren of the first element. (Denoted with the asterisk ( * )</td>
+                <td><code>selector1 * selector2 { style properties }</code></td>
+                <td>nav * a { color: white; }</td>
+            </tr>
+            <tr>
+                <td>Subsequent-Sibling Combinator</td>
+                <td>Selects elements based on their siblings. Aka They have to share a parent. (Denoted with the tilde ( ~ )</td>
+                <td><code>former_element ~ target_element { style properties }</code></td>
+                <td>p ~ a { color: red }</td>
+            </tr>
+            <tr>
+                <td>Next-Sibling Combinator</td>
+                <td>Selects elements based on their siblings that was immediately preceded. (Denoted with the plus ( + )</td>
+                <td><code>former_element + target_element { style properties }</code></td>
+                <td>p + a { font-weight: bold; }</td>
+            </tr>
+            <tr>
+                <td>Column Combinator</td>
+                <td>Selects elements based on their siblings that was immediately preceded. (Denoted with the plus ( + )</td>
+                <td><code>column-selector || cell-selector { style properties }</code></td>
+                <td>col.selected | | td { background: gray; }</td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>

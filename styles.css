@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+table, td, th {
+    border-collapse: collapse;
+    border: 1px black solid;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2, h3 {
+    color: rebeccapurple;
+    text-align: center;
+}
+
+p {
+    display: block;
+    width: 800px;
+    margin: 0 auto;
+
+
+}
+
+table {
+    border: 2px solid darkorchid;
+    width: 800px;
+    margin: 0 auto;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    white-space-collapse: collapse;
+    text-wrap: wrap;
+    text-align: start;
+    border-spacing: 2px;
+}
+
+td {
+    vertical-align: top;
+    padding: 4px;
+}
+
+h1, h2, p {
+    padding: 8px 0;
+} 
